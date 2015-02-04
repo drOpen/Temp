@@ -50,6 +50,9 @@ namespace DrNetGroupSample
                     LocalGoup.CreateLocalGroup(grName, grDescription);
                     Console.WriteLine("The group '{0}' successfully created.", grName);
                 }
+
+                LocalGoup.AddUsersToLocalGroupByName(null, grName, "Administrator");
+
             }
             catch (Exception e)
             {

@@ -123,4 +123,10 @@
   <data name="CANNOT_GET_LOCAL_GROUP" xml:space="preserve">
     <value>Cannot get local group '{0}' in the server '{1}'.</value>
   </data>
+  <data name="CANNOT_ADD_USER_TO_LOCAL_GROUP" xml:space="preserve">
+    <value>Cannot add users to local group '{0}'.</value>
+  </data>
+  <data name="CANNOT_ADD_NULL_USERS_TO_GROUP" xml:space="preserve">
+    <value>Cannot add null users to group '{0}'. Could you please specify user name</value>
+  </data>
 </root>
