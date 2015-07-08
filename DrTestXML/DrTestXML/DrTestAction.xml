@@ -2,7 +2,7 @@
 <!--
   DrTestAction.xml - XML serialization of DrTestAction as an object DrData 1.0.0, June 15, 2014 
  
-  Copyright (c) 2013-2014 Kudryashov Andrey aka Dr
+  Copyright (c) 2013-2015 Kudryashov Andrey aka Dr
  
   This software is provided 'as-is', without any express or implied
   warranty. In no event will the authors be held liable for any damages
@@ -94,10 +94,10 @@
   <DDNode Name="Statistics" Type="DrTestActionStatistics">
     <DDAttributesCollection>
       <Attribute Name="StartDate">
-        <DDValue Type="System.DateTime">0</DDValue>
+        <DDValue Type="System.DateTime">2013-06-17T15:25:01.0000000+04:00</DDValue>
       </Attribute>
       <Attribute Name="EndDate">
-        <DDValue Type="System.DateTime">0</DDValue>
+        <DDValue Type="System.DateTime">2013-06-17T15:25:01.0000000+04:00</DDValue>
       </Attribute>
       <Attribute Name="Total">
         <DDValue Type="System.Int32">0</DDValue>
