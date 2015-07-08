@@ -12,7 +12,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:choice maxOccurs="unbounded">
-          <xs:element ref="DDAttributesCollection" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="DDAttributesCollection" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="DDNode" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
       </xs:sequence>
