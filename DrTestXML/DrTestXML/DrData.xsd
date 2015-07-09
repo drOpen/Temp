@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-    DrData.xsd - This XML Schema representation of data storage DrData in xml format, 1.0.1, April 20, 2014
+    DrData.xsd - This XML Schema representation of data storage DrData in xml format, 1.0.1, April 20, 2015
     Copyright (c) 2013-2015 Kudryashov Andrey aka Dr
     Kudryashov Andrey <kudryashov.andrey at gmail.com>
   -->
@@ -128,6 +128,8 @@
         <xs:enumeration value="System.DateTime[]"/>
         <xs:enumeration value="System.Byte"/>
         <xs:enumeration value="System.Byte[]"/>
+        <xs:enumeration value="System.Guid"/>
+        <xs:enumeration value="System.Guid[]"/>
       </xs:restriction>
     </xs:simpleType>
   </xs:attribute>
