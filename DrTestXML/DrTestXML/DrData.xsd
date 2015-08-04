@@ -21,6 +21,11 @@
           <xs:documentation>Name of node. This attribute is required.</xs:documentation>
         </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="Type" type="xs:string" use="optional" default="">
+        <xs:annotation>
+          <xs:documentation>Type of node. This attribute is optional.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="IsRoot" type="xs:boolean" use="optional" default="false">
         <xs:annotation>
           <xs:documentation>Attribute exhibition on the root node. This attribute is optional and by default value is 'false'. This attribute information and is not used when creating an object.</xs:documentation>
@@ -59,6 +64,13 @@
       </xs:attribute>
       <xs:anyAttribute processContents="skip" />
     </xs:complexType>
+    <xs:unique name ="uniqAttributeName">
+      <xs:annotation >
+        <xs:documentation >Checking the uniqueness of the name of the Attribute on the same level</xs:documentation>
+      </xs:annotation>
+      <xs:selector xpath="./Attribute"/>
+      <xs:field xpath="@Name"/>
+    </xs:unique>
   </xs:element>
 
   <xs:element name="Attribute">
@@ -88,7 +100,7 @@
       <xs:sequence>
         <xs:element ref="Value" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
-      <xs:attribute ref="Type" use="required" >
+      <xs:attribute name="Type" type="ValueType" use="required" >
         <xs:annotation>
           <xs:documentation>Data type.</xs:documentation>
         </xs:annotation>
@@ -108,29 +120,31 @@
     </xs:annotation>
   </xs:element>
 
-  <xs:attribute name="Type">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="System.Char"/>
-        <xs:enumeration value="System.Char[]"/>
-        <xs:enumeration value="System.String"/>
-        <xs:enumeration value="System.String[]"/>
-        <xs:enumeration value="System.Boolean"/>
-        <xs:enumeration value="System.Boolean[]"/>
-        <xs:enumeration value="System.String[]"/>
-        <xs:enumeration value="System.Int32"/>
-        <xs:enumeration value="System.Int32[]"/>
-        <xs:enumeration value="System.Single"/>
-        <xs:enumeration value="System.Single[]"/>
-        <xs:enumeration value="System.Int64"/>
-        <xs:enumeration value="System.Int64[]"/>
-        <xs:enumeration value="System.DateTime"/>
-        <xs:enumeration value="System.DateTime[]"/>
-        <xs:enumeration value="System.Byte"/>
-        <xs:enumeration value="System.Byte[]"/>
-        <xs:enumeration value="System.Guid"/>
-        <xs:enumeration value="System.Guid[]"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:attribute>
+  <xs:simpleType name="ValueType">
+    <xs:annotation>
+      <xs:documentation>Data type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="System.Char"/>
+      <xs:enumeration value="System.Char[]"/>
+      <xs:enumeration value="System.String"/>
+      <xs:enumeration value="System.String[]"/>
+      <xs:enumeration value="System.Boolean"/>
+      <xs:enumeration value="System.Boolean[]"/>
+      <xs:enumeration value="System.String[]"/>
+      <xs:enumeration value="System.Int32"/>
+      <xs:enumeration value="System.Int32[]"/>
+      <xs:enumeration value="System.Single"/>
+      <xs:enumeration value="System.Single[]"/>
+      <xs:enumeration value="System.Int64"/>
+      <xs:enumeration value="System.Int64[]"/>
+      <xs:enumeration value="System.DateTime"/>
+      <xs:enumeration value="System.DateTime[]"/>
+      <xs:enumeration value="System.Byte"/>
+      <xs:enumeration value="System.Byte[]"/>
+      <xs:enumeration value="System.Guid"/>
+      <xs:enumeration value="System.Guid[]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
 </xs:schema>
