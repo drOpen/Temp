@@ -1,8 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-    DrTest.xsd - This XML Schema representation of test data storage DrData in xml format, 1.0.2, July 5, 2015
-    Copyright (c) 2015 Kudryashov Andrey aka Dr
-    Kudryashov Andrey <kudryashov.andrey at gmail.com>
+    DrTest.xsd - This XML Schema representation of test data storage DrData in xml format, 1.0.3, January 24, 2016 
+     
+    Copyright (c) 2013-2016 Kudryashov Andrey aka Dr
+     
+    This software is provided 'as-is', without any express or implied
+    warranty. In no event will the authors be held liable for any damages
+    arising from the use of this software.
+
+    Permission is granted to anyone to use this software for any purpose,
+    including commercial applications, and to alter it and redistribute it
+    freely, subject to the following restrictions:
+
+      1. The origin of this software must not be misrepresented; you must not
+      claim that you wrote the original software. If you use this software
+      in a product, an acknowledgment in the product documentation would be
+      appreciated but is not required.
+
+      2. Altered source versions must be plainly marked as such, and must not be
+      misrepresented as being the original software.
+
+      3. This notice may not be removed or altered from any source distribution.
+
+      Kudryashov Andrey <kudryashov.andrey at gmail.com>
   -->
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="DDNode">
@@ -58,7 +78,7 @@
       <xs:enumeration value="DrTestProperties"/>
       <xs:enumeration value="DrTestHistory"/>
       <xs:enumeration value="DrTestChangeSet"/>
-      <xs:enumeration value="DrTestTags"/>
+      <xs:enumeration value="DrTestInclusions"/>
       <xs:enumeration value="DrTestStatistics"/>
       <xs:enumeration value="DrTestVariables"/>
       <xs:enumeration value="DrTestActionProperties"/>
@@ -87,7 +107,7 @@
     </xs:complexType>
     <xs:unique name ="uniqAttributeName">
       <xs:annotation >
-        <xs:documentation >Checking the uniqueness of the name of the Attribute on the same level</xs:documentation>
+        <xs:documentation>Checking the uniqueness of the name of the Attribute on the same level</xs:documentation>
       </xs:annotation>
       <xs:selector xpath="./Attribute"/>
       <xs:field xpath="@Name"/>
@@ -140,7 +160,6 @@
       <xs:documentation>Element of array.</xs:documentation>
     </xs:annotation>
   </xs:element>
-
 
   <xs:simpleType name="ValueType">
     <xs:annotation>

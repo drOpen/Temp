@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<!--
+  UserStories.html - document describes user stories for DrTest, January 24, 2016
+ 
+  Copyright (c) 2013-2016 Kudryashov Andrey aka Dr
+ 
+  This software is provided 'as-is', without any express or implied
+  warranty. In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+      1. The origin of this software must not be misrepresented; you must not
+      claim that you wrote the original software. If you use this software
+      in a product, an acknowledgment in the product documentation would be
+      appreciated but is not required.
+
+      2. Altered source versions must be plainly marked as such, and must not be
+      misrepresented as being the original software.
+
+      3. This notice may not be removed or altered from any source distribution.
+
+      Kudryashov Andrey <kudryashov.andrey at gmail.com>
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>User stories for DrTest</title>
+    <style type="text/css">
+        .tbl {
+            BORDER-RIGHT: 0px;
+            BORDER-TOP: 0px;
+            BORDER-LEFT: 0px;
+            WIDTH: 100%;
+            BORDER-BOTTOM: 0px;
+        }
+
+        .headTbl {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 14pt;
+            WIDTH: 100%;
+            COLOR: #29558c;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+        }
+
+        .columsHeaderTbl {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            BORDER-TOP: #eeeeee 1px solid;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            BORDER-LEFT: #eeeeee 1px solid;
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 12pt;
+            COLOR: #000000;
+            PADDING-TOP: 2px;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+            BACKGROUND-COLOR: #f4f4f4;
+        }
+
+        .storyFailed {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            BORDER-TOP: #eeeeee 1px solid;
+            PADDING-LEFT: 8px;
+            FONT-SIZE: 10px;
+            PADDING-BOTTOM: 3px;
+            VERTICAL-ALIGN: middle;
+            BORDER-LEFT: #eeeeee 1px solid;
+            COLOR: #000000;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+            BACKGROUND-COLOR: #fff3f3;
+        }
+
+        .storyProposed {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            BORDER-TOP: #eeeeee 1px solid;
+            PADDING-LEFT: 8px;
+            FONT-SIZE: 10px;
+            PADDING-BOTTOM: 3px;
+            VERTICAL-ALIGN: middle;
+            BORDER-LEFT: #eeeeee 1px solid;
+            COLOR: #006633;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+            BACKGROUND-COLOR: #ffffee;
+        }
+
+        .storyPassed {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            BORDER-TOP: #eeeeee 1px solid;
+            PADDING-LEFT: 8px;
+            FONT-SIZE: 10px;
+            PADDING-BOTTOM: 3px;
+            VERTICAL-ALIGN: middle;
+            BORDER-LEFT: #eeeeee 1px solid;
+            COLOR: #006633;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+            BACKGROUND-COLOR: #f3fff3;
+        }
+
+        .storySkipped {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            BORDER-TOP: #eeeeee 1px solid;
+            PADDING-LEFT: 8px;
+            FONT-SIZE: 10px;
+            PADDING-BOTTOM: 3px;
+            VERTICAL-ALIGN: middle;
+            BORDER-LEFT: #eeeeee 1px solid;
+            COLOR: #006633;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            FONT-FAMILY: tahoma, verdana, arial, sans-serif;
+            BACKGROUND-COLOR: #f4f4f4;
+        }
+
+        .auto-style2 {
+            height: 16px;
+        }
+
+        .auto-style3 {
+            height: 39px;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="tbl">
+        <tr class="headTbl">
+            <td>This document describes user stories for DrTest</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class="tbl">
+        <tr class="columsHeaderTbl">
+            <td>Story</td>
+            <td>Description</td>
+            <td>Status</td>
+        </tr>
+
+        <tr class="storyProposed">
+            <td>1. Каждый тест самодостаточен, содержит в себе всю информацию по запуску, выполненным шагам и их статусу</td>
+            <td></td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>2. Тест может содержать неограниченное количество маркеров 'Inclusions', которые формируются на основании маркеров его дитей: как действий самого теста, так и сабтестов, если это тест - контейнер</td>
+            <td></td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>3. Может ли тест содержать в себе сабтесты или вводится отдельная сущность тестовый контейнер.</td>
+            <td>Например, ввести понятие Tests</td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>4. Тест должен содержать уникальный идентификатор запуска.</td>
+            <td>Этот идентификатор присваивается всем тестам, контейнерам тестов, запускаемым совместно, не зависимо от того, где и когда происходит сам запуск. В дальнейшем этот ID позволит найти все тесты из этого запуска.</td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>5. Необходимо обеспечить поддержку, идентификации теста, который клонировался - копировался и запускался на одной/разной машине.</td>
+            <td>Например, есть описанные тесты, которые в процессе могут копироваться и выполняться на разных машинах, это один запуск id, это один тест, у обоих клонов парент id одинаков, но это разные результаты одного и того же теста! Нужен идентификатор! Который позволит посмотреть результат выполнения одного и того же теста в рамках одного запуска на разных компьютерах, лабораториях, повторный запуск на одной и той же машине!</td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>5. Необходимо обеспечить поддержку, с возможностью восстановления - построения в отчете исходного дерева тестов.</td>
+            <td>Например, есть исходное описанные тестов. Должна быть возможность восстановить эту иерархию только на основании результатов присланных тестов. Например, через parent id</td>
+            <td>Proposed</td>
+        </tr>
+
+        <tr class="storyPassed">
+            <td>Story</td>
+            <td>description</td>
+            <td>Passed</td>
+        </tr>
+        <tr class="storySkipped">
+            <td>Story</td>
+            <td>description</td>
+            <td>Skipped</td>
+        </tr>
+        <tr class="storyProposed">
+            <td>Story</td>
+            <td>description</td>
+            <td>Proposed</td>
+        </tr>
+        <tr class="storyFailed">
+            <td>Story</td>
+            <td>description</td>
+            <td>Failed</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

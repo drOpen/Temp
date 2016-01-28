@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
-    DrTest.xml - XML serialization of DrTest as an object DrData 1.0.2, June 15, 2014 
+    DrTest.xml - XML serialization of DrTest as an object DrData 1.0.3, January 24, 2016 
  
-    Copyright (c) 2013-2015 Kudryashov Andrey aka Dr
+    Copyright (c) 2013-2016 Kudryashov Andrey aka Dr
  
     This software is provided 'as-is', without any express or implied
     warranty. In no event will the authors be held liable for any damages
@@ -29,8 +29,8 @@
     <Attribute Name="Properties" >
       <DDValue Type="System.String">./Properties</DDValue>
     </Attribute>
-    <Attribute Name="Tags">
-      <DDValue Type="System.String">./Properties/Tags</DDValue>
+    <Attribute Name="Inclusions">
+      <DDValue Type="System.String">./Properties/Inclusions</DDValue>
     </Attribute>
     <Attribute Name="History">
       <DDValue Type="System.String">./Properties/History</DDValue>
@@ -76,21 +76,48 @@
         <!--Stop + ToDo: Continue-->
       </Attribute>
     </DDAttributesCollection>
-    <DDNode Name="Tags" Type="DrTestTags">
+    <DDNode Name="Inclusions" Type="DrTestInclusions">
       <DDAttributesCollection>
-        <Attribute Name="Features">
-          <DDValue Type="System.String[]">
-            <Value>FeatureA</Value>
-            <Value>FeatureB</Value>
-          </DDValue>
+        <Attribute Name="Tags" >
+          <DDValue Type="System.String">./Tags</DDValue>
         </Attribute>
-        <Attribute Name="Categories">
-          <DDValue Type="System.String[]">
-            <Value>Category1</Value>
-            <Value>Category2</Value>
-          </DDValue>
+        <Attribute Name="Features" >
+          <DDValue Type="System.String">./Features</DDValue>
+        </Attribute>
+        <Attribute Name="Categories" >
+          <DDValue Type="System.String">./Categories</DDValue>
         </Attribute>
       </DDAttributesCollection>
+      <DDNode Name="Tags" Type="DrTestInclusions">
+        <DDAttributesCollection>
+          <Attribute Name="Value">
+            <DDValue Type="System.String[]">
+              <Value>TagA</Value>
+              <Value>TagB</Value>
+            </DDValue>
+          </Attribute>
+        </DDAttributesCollection>
+      </DDNode>
+      <DDNode Name="Features" Type="DrTestInclusions">
+        <DDAttributesCollection>
+          <Attribute Name="Value">
+            <DDValue Type="System.String[]">
+              <Value>FeatureA</Value>
+              <Value>FeatureB</Value>
+            </DDValue>
+          </Attribute>
+        </DDAttributesCollection>
+      </DDNode>
+      <DDNode Name="Categories" Type="DrTestInclusions">
+        <DDAttributesCollection>
+          <Attribute Name="Value">
+            <DDValue Type="System.String[]">
+              <Value>CategoryA</Value>
+              <Value>CategoryB</Value>
+            </DDValue>
+          </Attribute>
+        </DDAttributesCollection>
+      </DDNode>
     </DDNode>
     <DDNode Name="History" Type="DrTestHistory">
       <DDAttributesCollection/>
@@ -202,15 +229,48 @@
             <!--Stop + ToDo: Continue-->
           </Attribute>
         </DDAttributesCollection>
-        <DDNode Name="Tags" Type="DrTestTags">
+        <DDNode Name="Inclusions" Type="DrTestInclusions">
           <DDAttributesCollection>
-            <Attribute Name="Features"/>
-            <Attribute Name="Categories">
-              <DDValue Type="System.String[]">
-                <Value>Category1</Value>
-              </DDValue>
+            <Attribute Name="Tags" >
+              <DDValue Type="System.String">./Tags</DDValue>
+            </Attribute>
+            <Attribute Name="Features" >
+              <DDValue Type="System.String">./Features</DDValue>
+            </Attribute>
+            <Attribute Name="Categories" >
+              <DDValue Type="System.String">./Categories</DDValue>
             </Attribute>
           </DDAttributesCollection>
+          <DDNode Name="Tags" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>TagA</Value>
+                  <Value>TagB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+          <DDNode Name="Features" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>FeatureA</Value>
+                  <Value>FeatureB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+          <DDNode Name="Categories" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>CategoryA</Value>
+                  <Value>CategoryB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
         </DDNode>
       </DDNode>
       <DDNode Name="Statistics" Type="DrTestActionStatistics">
@@ -318,15 +378,48 @@
             <!--Stop + ToDo: Continue-->
           </Attribute>
         </DDAttributesCollection>
-        <DDNode Name="Tags" Type="DrTestTags">
+        <DDNode Name="Inclusions" Type="DrTestInclusions">
           <DDAttributesCollection>
-            <Attribute Name="Features"/>
-            <Attribute Name="Categories">
-              <DDValue Type="System.String[]">
-                <Value>Category2</Value>
-              </DDValue>
+            <Attribute Name="Tags" >
+              <DDValue Type="System.String">./Tags</DDValue>
+            </Attribute>
+            <Attribute Name="Features" >
+              <DDValue Type="System.String">./Features</DDValue>
+            </Attribute>
+            <Attribute Name="Categories" >
+              <DDValue Type="System.String">./Categories</DDValue>
             </Attribute>
           </DDAttributesCollection>
+          <DDNode Name="Tags" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>TagA</Value>
+                  <Value>TagB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+          <DDNode Name="Features" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>FeatureA</Value>
+                  <Value>FeatureB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+          <DDNode Name="Categories" Type="DrTestInclusions">
+            <DDAttributesCollection>
+              <Attribute Name="Value">
+                <DDValue Type="System.String[]">
+                  <Value>CategoryA</Value>
+                  <Value>CategoryB</Value>
+                </DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
         </DDNode>
       </DDNode>
       <DDNode Name="Statistics" Type="DrTestActionStatistics">
