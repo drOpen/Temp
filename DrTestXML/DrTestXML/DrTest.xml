@@ -88,7 +88,7 @@
           <DDValue Type="System.String">./Categories</DDValue>
         </Attribute>
       </DDAttributesCollection>
-      <DDNode Name="Tags" Type="DrTestInclusions">
+      <DDNode Name="Tags" Type="DrTestInclusion">
         <DDAttributesCollection>
           <Attribute Name="Value">
             <DDValue Type="System.String[]">
@@ -98,7 +98,7 @@
           </Attribute>
         </DDAttributesCollection>
       </DDNode>
-      <DDNode Name="Features" Type="DrTestInclusions">
+      <DDNode Name="Features" Type="DrTestInclusion">
         <DDAttributesCollection>
           <Attribute Name="Value">
             <DDValue Type="System.String[]">
@@ -108,7 +108,7 @@
           </Attribute>
         </DDAttributesCollection>
       </DDNode>
-      <DDNode Name="Categories" Type="DrTestInclusions">
+      <DDNode Name="Categories" Type="DrTestInclusion">
         <DDAttributesCollection>
           <Attribute Name="Value">
             <DDValue Type="System.String[]">

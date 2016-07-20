@@ -76,9 +76,11 @@
       <xs:enumeration value="DrTestActions"/>
       <xs:enumeration value="DrTestAction"/>
       <xs:enumeration value="DrTestProperties"/>
+      <xs:enumeration value="DrTestProperty"/>
       <xs:enumeration value="DrTestHistory"/>
       <xs:enumeration value="DrTestChangeSet"/>
       <xs:enumeration value="DrTestInclusions"/>
+      <xs:enumeration value="DrTestInclusion"/>
       <xs:enumeration value="DrTestStatistics"/>
       <xs:enumeration value="DrTestVariables"/>
       <xs:enumeration value="DrTestActionProperties"/>
