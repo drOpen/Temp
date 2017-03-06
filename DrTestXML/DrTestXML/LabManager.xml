@@ -1,0 +1,301 @@
+﻿<DDNode Name="d23b1422-9d19-4536-b1df-79a2f3728af8" IsRoot="True" Children="2">
+  <DDAttributesCollection>
+
+    <Attribute Name="LabName">
+      <DDValue Type="System.String">Names</DDValue>
+    </Attribute>
+    <Attribute Name="LabID">
+      <DDValue Type="System.Guid" Size="16">XXXXXXXXXXXXXXXXXX</DDValue>
+      <!-- static uniq lab identificator for matching lab. Sets when lab was described -->
+    </Attribute>
+    <Attribute Name="CloneID">
+      <DDValue Type="System.Guid" Size="16">XXXXXXXXXXXXXXXXXX</DDValue>
+      <!-- dynamic uniq clonned lab identificator. Sets before clone vm. Equals for all vm of current lab -->
+    </Attribute>
+    <Attribute Name="ExecutionID">
+      <DDValue Type="System.Guid" Size="16">XXXXXXXXXXXXXXXXXX</DDValue>
+      <!-- dynamic uniq test execution identificator. Sets when test suit started. Equals for all tests anywhere -->
+    </Attribute>
+    <Attribute Name="Description">
+      <DDValue Type="System.String" Size="10">Blya-Blya</DDValue>
+    </Attribute>
+    <Attribute Name="HostName">
+      <DDValue Type="System.String" Size="11">172.24.0.80</DDValue>
+    </Attribute>
+  </DDAttributesCollection>
+
+  <!-- should be add virtual mashine start queeu 
+  
+  GUIDNAT
+  GUIDDC
+  GUIDEXCHANGE
+  
+    -->
+    
+  <DDNode Name="Marks" >
+    <!-- built from vm collection -->
+    <DDNode Name="Tags">
+      <DDAttributesCollection>
+        <Attribute Name="Value">
+          <DDValue Type="System.String[]">
+            <Value>TagA</Value>
+            <Value>TagB</Value>
+          </DDValue>
+        </Attribute>
+      </DDAttributesCollection>
+    </DDNode>
+    <DDNode Name="OS">
+      <DDAttributesCollection>
+        <Attribute Name="Value">
+          <DDValue Type="System.String[]">
+            <Value>w7_x64</Value>
+            <Value>w2k3r2_x86</Value>
+          </DDValue>
+        </Attribute>
+      </DDAttributesCollection>
+    </DDNode>
+    <DDNode Name="Localization">
+      <DDAttributesCollection>
+        <Attribute Name="Value">
+          <DDValue Type="System.String[]">
+            <Value>en-en</Value>
+            <Value>ru-ru</Value>
+          </DDValue>
+        </Attribute>
+      </DDAttributesCollection>
+    </DDNode>
+  </DDNode>
+
+  <DDNode Name="vSphereCommonSettings">
+    <DDAttributesCollection Count="7">
+      <Attribute Name="ServerName">
+        <DDValue Type="System.String" Size="24">https://172.24.0.1/sdk</DDValue>
+      </Attribute>
+      <Attribute Name="UserName">
+        <DDValue Type="System.String" Size="4">root</DDValue>
+      </Attribute>
+      <Attribute Name="Pwd">
+        <DDValue Type="System.String" Size="10">Qwerty`123</DDValue>
+      </Attribute>
+      <Attribute Name="HostName">
+        <DDValue Type="System.String" Size="11">172.24.0.80</DDValue>
+      </Attribute>
+    </DDAttributesCollection>
+  </DDNode>
+
+  <DDNode Name="vSwitchConfiguration">
+    <DDAttributesCollection Count="7">
+      <Attribute Name="SwitchName">
+        <DDValue Type="System.String" Size="13">SwitchName</DDValue>
+      </Attribute>
+      <Attribute Name="PortGrpName">
+        <DDValue Type="System.String" Size="13">AutotestPortGroup</DDValue>
+      </Attribute>
+      <Attribute Name="NumberOfPorts">
+        <DDValue Type="System.Int32" Size="4">24</DDValue>
+      </Attribute>
+    </DDAttributesCollection>
+  </DDNode>
+
+  <DDNode Name="vmCollection" Children="2">
+    <DDAttributesCollection />
+
+    <DDNode Name="GUIDNAT">
+
+      <DDNode Name="vmSettings">
+        <DDAttributesCollection Count="12">
+          <Attribute Name="Description">NAT</Attribute>
+          <Attribute Name="OldVMName">
+            vmSourceName
+            <DDValue Type="System.String" Size="11">NAT</DDValue>
+          </Attribute>
+          <Attribute Name="VMName">
+            vmCloneName_%BuildNumber%_%ExecutionID%_%CloneID%
+            <DDValue Type="System.String" Size="16">CloneNAT</DDValue>
+          </Attribute>
+          <Attribute Name="ShapshotName">
+            vmSourceShapshotName
+            <DDValue Type="System.String" Size="14">ready_for_test</DDValue>
+          </Attribute>
+          <Attribute Name="vmResultShapshotName">
+            <DDValue Type="System.String" Size="14">Result_%BuildNumber%_%ExecutionID%_%CloneID%</DDValue>
+          </Attribute>
+          <Attribute Name="ResorcePoolName">
+            vmResorcePoolName
+            <DDValue Type="System.String" Size="8">AutotestPool</DDValue>
+          </Attribute>
+          <Attribute Name="GuestLogin">
+            <DDValue Type="System.String" Size="13">Administrator</DDValue>
+          </Attribute>
+          <Attribute Name="GuestPwd">
+            <DDValue Type="System.String" Size="10">qwerty`123</DDValue>
+          </Attribute>
+          <Attribute Name="GuestWaitStartApp">
+            <DDValue Type="System.String[]" Size="9">
+              <Value>LSASS.EXE</Value>
+              <Value>RPC.EXE</Value>
+            </DDValue>
+          </Attribute>
+        </DDAttributesCollection>
+      </DDNode>
+
+      <DDNode Name="NetworkAdapterCollection">
+        <DDNode Name="GUID" Type="vmNetworkAdapter">
+          <!--you should use the node type -->
+          <DDAttributesCollection Count="15">
+            <Attribute Name="PortGrpName">
+              <DDValue Type="System.String" Size="13">VM Network</DDValue>
+            </Attribute>
+            <Attribute Name="AdapterName">
+              <DDValue Type="System.String" Size="13">Network adapter 1</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+        <DDNode Name="GUID" Type="vmNetworkAdapter">
+          <DDAttributesCollection Count="15">
+            <Attribute Name="PortGrpName">
+              <DDValue Type="System.String" Size="13">AutotestPortGroup</DDValue>
+            </Attribute>
+            <Attribute Name="AdapterName">
+              <DDValue Type="System.String" Size="13">Network adapter 2</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+      </DDNode>
+      <DDNode Name="VmxAttributeCollection">
+        <DDAttributesCollection >
+          <Attribute Name="guestinfo.autotestlab.ipaddr">
+            <DDValue Type="System.String" Size="13">192.168.1.1</DDValue>
+          </Attribute>
+          <Attribute Name="guestinfo.autotestlab.netmask">
+            <DDValue Type="System.String" Size="13">255.255.255.0</DDValue>
+          </Attribute>
+        </DDAttributesCollection>
+        <!--
+        <DDNode Name="guestinfo.autotestlab.ipaddr">
+          <DDAttributesCollection Count="15">
+            <Attribute Name="CustomActionKey">
+              <DDValue Type="System.String" Size="13">guestinfo.autotestlab.ipaddr</DDValue>
+            </Attribute>
+            <Attribute Name="CustomActionValue">
+              <DDValue Type="System.String" Size="13">192.168.1.1</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+        <DDNode Name="guestinfo.autotestlab.netmask">
+          <DDAttributesCollection Count="15">
+            <Attribute Name="CustomActionKey">
+              <DDValue Type="System.String" Size="13">guestinfo.autotestlab.netmask</DDValue>
+            </Attribute>
+            <Attribute Name="CustomActionValue">
+              <DDValue Type="System.String" Size="13">255.255.255.0</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+      </DDNode>
+      -->
+      </DDNode>
+
+
+      <DDNode Name="AutotestSQL">
+        <DDNode Name="VmSettings">
+          <DDAttributesCollection Count="12">
+            <Attribute Name="OldVMName">
+              <DDValue Type="System.String" Size="11">ATSQL</DDValue>
+            </Attribute>
+            <Attribute Name="VMName">
+              <DDValue Type="System.String" Size="16">CloneAutotestSQL</DDValue>
+            </Attribute>
+            <Attribute Name="Application">
+              <DDValue Type="System.String" Size="9">LSASS.EXE</DDValue>
+            </Attribute>
+            <Attribute Name="ShapshotName">
+              <DDValue Type="System.String" Size="14">LinkedCloneSnapshot02032017</DDValue>
+            </Attribute>
+            <Attribute Name="Login">
+              <DDValue Type="System.String" Size="13">Administrator</DDValue>
+            </Attribute>
+            <Attribute Name="Password">
+              <DDValue Type="System.String" Size="10">qwerty`123</DDValue>
+            </Attribute>
+            <Attribute Name="ResorcePoolName">
+              <DDValue Type="System.String" Size="8">AutotestPool</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+        <DDNode Name="NetworkAdapterCollection">
+          <DDNode Name="Network adapter 1">
+            <DDAttributesCollection Count="15">
+              <Attribute Name="PortGrpName">
+                <DDValue Type="System.String" Size="13">AutotestPortGroup</DDValue>
+              </Attribute>
+              <Attribute Name="AdapterName">
+                <DDValue Type="System.String" Size="13">Network adapter 1</DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+        </DDNode>
+      </DDNode>
+      <DDNode Name="TEST-MANAGER">
+        <DDNode Name="VmSettings">
+          <DDAttributesCollection Count="15">
+            <Attribute Name="OldVMName">
+              <DDValue Type="System.String" Size="16">TEST-MANAGER</DDValue>
+            </Attribute>
+            <Attribute Name="VMName">
+              <DDValue Type="System.String" Size="21">CloneTestManager</DDValue>
+            </Attribute>
+            <Attribute Name="Application">
+              <DDValue Type="System.String" Size="9">LSASS.EXE</DDValue>
+            </Attribute>
+            <Attribute Name="ShapshotName">
+              <DDValue Type="System.String" Size="14">LinkedCloneSnapshot02022017</DDValue>
+            </Attribute>
+            <Attribute Name="Login">
+              <DDValue Type="System.String" Size="13">Administrator</DDValue>
+            </Attribute>
+            <Attribute Name="Password">
+              <DDValue Type="System.String" Size="10">qwerty`123</DDValue>
+            </Attribute>
+            <Attribute Name="ResorcePoolName">
+              <DDValue Type="System.String" Size="8">AutotestPool</DDValue>
+            </Attribute>
+            <Attribute Name="DonwloadSourceFilePath">
+              <DDValue Type="System.String" Size="20">C:\result.txt</DDValue>
+            </Attribute>
+            <Attribute Name="DonwloadDestinationFilePath">
+              <DDValue Type="System.String" Size="20">C:\result.txt</DDValue>
+            </Attribute>
+            <Attribute Name="AppliactionPATH">
+              <DDValue Type="System.String" Size="11">c:\exec.cmd</DDValue>
+            </Attribute>
+            <Attribute Name="Arguments">
+              <DDValue Type="System.String" Size="11">"\\server\share"</DDValue>
+            </Attribute>
+          </DDAttributesCollection>
+        </DDNode>
+        <DDNode Name="NetworkAdapterCollection">
+          <DDNode Name="Network adapter 1">
+            <DDAttributesCollection Count="15">
+              <Attribute Name="PortGrpName">
+                <DDValue Type="System.String" Size="13">AutotestPortGroup</DDValue>
+              </Attribute>
+              <Attribute Name="AdapterName">
+                <DDValue Type="System.String" Size="13">Network adapter 1</DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+          <DDNode Name="Network adapter 2">
+            <DDAttributesCollection Count="15">
+              <Attribute Name="PortGrpName">
+                <DDValue Type="System.String" Size="13">AutotestPortGroup</DDValue>
+              </Attribute>
+              <Attribute Name="AdapterName">
+                <DDValue Type="System.String" Size="13">Network adapter 2</DDValue>
+              </Attribute>
+            </DDAttributesCollection>
+          </DDNode>
+        </DDNode>
+      </DDNode>
+    </DDNode>
+  </DDNode>
