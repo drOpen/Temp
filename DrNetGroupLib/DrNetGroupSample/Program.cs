@@ -36,6 +36,11 @@ namespace DrNetGroupSample
     {
         static void Main(string[] args)
         {
+
+            LocalGoup.EventEnumeratePartiallyOfLocalGroupMemberInfo1 += DoEnumeratedPartialyOfLocalGroupMemberInfo1;
+            var members = LocalGoup.GetLocalGroupGetMembers1("", "Administrators");
+            
+
             var grName = "Test";
             var grDescription = "Test Description";
             try
@@ -68,6 +73,12 @@ namespace DrNetGroupSample
             if (e.InnerException != null) msg = msg + " (" + GetExceptionMessage(e.InnerException) + ")";
             return msg;
         }
+
+        static void DoEnumeratedPartialyOfLocalGroupMemberInfo1(object sender, LocalGoup.DrLocalGroupEventArgsEnumeratedPartialyOfLocalGroupMemberInfo1 e)
+        {
+
+        }
+
 
     }
 }
