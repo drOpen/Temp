@@ -141,6 +141,9 @@ namespace DrNetGroupLib
         /// allocates the amount of memory required for the data
         /// </summary>
         public const int MAX_PREFERRED_LENGTH = -1;
+        /// <summary>
+        /// More data is available
+        /// </summary>
         public const int ERROR_MORE_DATA = 234;
         /// <summary>
         /// The operation was canceled by the user.
