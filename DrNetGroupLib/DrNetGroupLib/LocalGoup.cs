@@ -316,7 +316,7 @@ namespace DrNetGroupLib
             int entriesRead, entriesTotal, res;
             do
             {
-                res = NetLocalGroupGetMembers(serverName, groupName, 1, out ptr, 128, out entriesRead, out entriesTotal, out hResume);
+                res = NetLocalGroupGetMembers(serverName, groupName, 1, out ptr, pageBufferSize, out entriesRead, out entriesTotal, out hResume);
                 if ((res == NERR_Success) || (res == ERROR_MORE_DATA))
                 {
                     if ((entriesRead == 0) && (res == NERR_Success)) return membersInfo; // there are nobody
