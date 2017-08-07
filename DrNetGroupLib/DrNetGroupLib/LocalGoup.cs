@@ -328,7 +328,7 @@ namespace DrNetGroupLib
                     NetApiBufferFree(ptr);
                     var eArgs = new DrLocalGroupEventArgsEnumeratedPartialyOfLocalGroupMemberInfo1(entriesRead, entriesTotal, membersInfo);
                     OnEnumeratedPartialyOfLocalGroupMemberInfo1(eArgs);
-                    if (eArgs.Cancel == false) throw new Win32Exception(ERROR_CANCELLED);
+                    if (eArgs.Cancel) throw new Win32Exception(ERROR_CANCELLED);
                 }
             } while (res == ERROR_MORE_DATA);
             if (res == NERR_Success) return membersInfo;
