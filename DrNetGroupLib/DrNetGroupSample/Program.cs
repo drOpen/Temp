@@ -39,8 +39,13 @@ namespace DrNetGroupSample
 
             LocalGoup.EventEnumeratePartiallyOfLocalGroupMemberInfo1 += DoEnumeratedPartialyOfLocalGroupMemberInfo1;
             var members = LocalGoup.GetLocalGroupGetMembers1("", "Administrators");
-            
 
+            foreach (var m in members)
+            {
+                Console.WriteLine(m.lgrmi1_name);
+            }
+
+            return;
             var grName = "Test";
             var grDescription = "Test Description";
             try

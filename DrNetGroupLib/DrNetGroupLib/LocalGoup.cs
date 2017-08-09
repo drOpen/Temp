@@ -326,7 +326,7 @@ namespace DrNetGroupLib
                     for (int i = 0; i < entriesRead; i++)
                     {
                         membersInfo[i + iStart] = (LOCALGROUP_MEMBERS_INFO_1)Marshal.PtrToStructure(ptrMemberInfo, typeof(LOCALGROUP_MEMBERS_INFO_1));
-                        ptrMemberInfo = (IntPtr)(ptrMemberInfo.ToInt32() + LOCALGROUP_MEMBERS_INFO_1.SizeOf);
+                        ptrMemberInfo = (IntPtr)(ptrMemberInfo.ToInt64() + LOCALGROUP_MEMBERS_INFO_1.SizeOf);
                     }
                     NetApiBufferFree(ptr);
                     var eArgs = new DrLocalGroupEventArgsEnumeratedPartialyOfLocalGroupMemberInfo1(entriesRead, entriesTotal, membersInfo);
