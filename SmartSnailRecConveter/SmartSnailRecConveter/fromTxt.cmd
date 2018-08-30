@@ -1,0 +1,1 @@
+SmartSnailRecConveter.exe txt -s c:\1\out.txt -d c:\1\out.bin
